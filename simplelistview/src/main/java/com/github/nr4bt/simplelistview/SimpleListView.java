@@ -1,4 +1,4 @@
-package com.orhanobut.simplelistview;
+package com.github.nr4bt.simplelistview;
 
 import android.content.Context;
 import android.database.DataSetObserver;
