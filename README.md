@@ -17,10 +17,10 @@ dependencies {
 Either define in xml or dynamically.
 xml sample
 <pre>
-<com.github.nr4bt.simplelistview.SimpleListView
+com.github.nr4bt.simplelistview.SimpleListView
     android:id="@+id/list"                     
     android:layout_width="match_parent"        
-    android:layout_height="wrap_content">     
+    android:layout_height="wrap_content"
 </pre>
 
 Initialize the listview
