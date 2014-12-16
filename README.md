@@ -1,4 +1,14 @@
 simplelistview
 ==============
 
-Android simple listview by using linearlayout
+Android simple listview by using linearlayout. Behavior is the same except no scrollable, thus you can use it freely in scrollview. 
+
+###Gradle
+<pre>
+repositories {
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/"}
+}
+dependencies {
+    compile 'com.github.nr4bt:dialogplus:1.0.0-SNAPSHOT@aar'
+}
+</pre>
