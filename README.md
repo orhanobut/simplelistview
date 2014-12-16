@@ -23,28 +23,25 @@ com.github.nr4bt.simplelistview.SimpleListView
     android:layout_height="wrap_content"
 </pre>
 
-Initialize the listview
-<pre>
-//You can either set resource or view itself
-listView.setHeaderView(R.layout.header);       
+You can either set resource or view itself
+<pre>listView.setHeaderView(R.layout.header);</pre>     
 
-//You can either set resource or view itself 
-listView.setFooterView(R.layout.footer);  
+You can either set resource or view itself 
+<pre>listView.setFooterView(R.layout.footer);</pre>
 
-//You can set only resource  
-listView.setDividerView(R.layout.divider);  
+You can set only resource  
+<pre>listView.setDividerView(R.layout.divider);</pre>  
 
-//You can set special listener for the listview
-listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() { 
+You can set special listener for the listview
+<pre>listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() { 
     @Override                                                              
     public void onItemClick(Object item, View view, int position) {        
         //This special listener will return object for you                                                            
     }                                                                      
-});         
+});</pre>         
 
-// At last set adapter
-listView.setAdapter(adapter);                                               
+At last set adapter
+<pre>listView.setAdapter(adapter);</pre>                                               
                                                                            
-//It will refresh the listview                                             
-adapter.notifyDataSetChanged();                                            
-</pre>
+Refresh the listview                                             
+<pre>adapter.notifyDataSetChanged();</pre>
