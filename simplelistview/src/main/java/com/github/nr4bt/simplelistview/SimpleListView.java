@@ -36,7 +36,13 @@ public class SimpleListView extends LinearLayout {
     /**
      * It is used to separate items if it is set
      */
-    private int dividerResId = INVALID;
+    private int dividerViewResourceId = INVALID;
+
+    /**
+     * Determines if the header and footer view should be added
+     */
+    private View headerView;
+    private View footerView;
 
     /**
      * Special item click listener in order to allow to user to take an action
@@ -53,15 +59,34 @@ public class SimpleListView extends LinearLayout {
         setOrientation(VERTICAL);
     }
 
-    public void setDividerResId(int resId) {
-        dividerResId = resId;
+    public void setDividerView(int resourceId) {
+        dividerViewResourceId = resourceId;
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.itemClickListener = listener;
     }
 
+    public void setHeaderView(View view) {
+        headerView = view;
+    }
+
+    public void setHeaderView(int resourceId) {
+        headerView = layoutInflater.inflate(resourceId, this, false);
+    }
+
+    public void setFooterView(View view) {
+        footerView = view;
+    }
+
+    public void setFooterView(int resourceId) {
+        footerView = layoutInflater.inflate(resourceId, this, false);
+    }
+
     public void setAdapter(BaseAdapter adapter) {
+        if (adapter == null) {
+            throw new NullPointerException("Adapter may not be null");
+        }
         if (this.adapter != null && this.dataSetObserver != null) {
             adapter.unregisterDataSetObserver(dataSetObserver);
         }
@@ -76,24 +101,28 @@ public class SimpleListView extends LinearLayout {
      * It is called when the notifyDataSetChanged or first initialize
      */
     private void refreshList() {
+        if (headerView != null) {
+            addView(headerView);
+        }
         int count = adapter.getCount();
         for (int i = 0; i < count; i++) {
             final View view = adapter.getView(i, null, this);
             final int position = i;
-            view.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (itemClickListener == null) {
-                        return;
+            if (itemClickListener != null) {
+                view.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        itemClickListener.onItemClick(adapter.getItem(position), view, position);
                     }
-
-                    itemClickListener.onItemClick(adapter.getItem(position), view, position);
-                }
-            });
-            addView(view);
-            if (dividerResId != INVALID && i != count - 1) {
-                addView(layoutInflater.inflate(dividerResId, this, false));
+                });
             }
+            addView(view);
+            if (dividerViewResourceId != INVALID && i != count - 1) {
+                addView(layoutInflater.inflate(dividerViewResourceId, this, false));
+            }
+        }
+        if (footerView != null) {
+            addView(footerView);
         }
     }
 

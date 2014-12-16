@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 
 import com.github.nr4bt.simplelistview.SimpleListView;
 
@@ -15,6 +17,32 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SimpleListView listView = (SimpleListView) findViewById(R.id.list);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_list_item_1,
+                new String[]{
+                        "asdfads",
+                        "Babilla",
+                        "Orhan Obut",
+                        "is great",
+                        "awesome"
+                }
+        );
+
+        listView.setHeaderView(R.layout.header);
+        listView.setFooterView(R.layout.footer);
+        listView.setDividerView(R.layout.divider);
+        listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(Object item, View view, int position) {
+                //
+            }
+        });
+        listView.setAdapter(adapter);
+
+        //It will refresh the listview
+        adapter.notifyDataSetChanged();
     }
 
 
