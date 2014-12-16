@@ -1,7 +1,7 @@
 simplelistview
 ==============
 
-Android simple listview by using linearlayout. Behavior is the same except no scrollable, thus you can use it freely in scrollview. 
+Android simple listview by using linearlayout. Behavior is the same except no scrollable, thus you can use it freely in scrollview. It is very basic implementation, you should not use for the huge list.
 
 ###Gradle
 <pre>
