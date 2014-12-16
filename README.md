@@ -25,16 +25,25 @@ com.github.nr4bt.simplelistview.SimpleListView
 
 Initialize the listview
 <pre>
-listView.setHeaderView(R.layout.header);  //You can either set resource or view itself                                 
-listView.setFooterView(R.layout.footer);  //You can either set resource or view itself                                   
-listView.setDividerView(R.layout.divider);  //You can set only resource                             
+//You can either set resource or view itself
+listView.setHeaderView(R.layout.header);       
+
+//You can either set resource or view itself 
+listView.setFooterView(R.layout.footer);  
+
+//You can set only resource  
+listView.setDividerView(R.layout.divider);  
+
+//You can set special listener for the listview
 listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() { 
     @Override                                                              
     public void onItemClick(Object item, View view, int position) {        
         //This special listener will return object for you                                                            
     }                                                                      
-});                                                                        
-listView.setAdapter(adapter); // At last set adapter                                              
+});         
+
+// At last set adapter
+listView.setAdapter(adapter);                                               
                                                                            
 //It will refresh the listview                                             
 adapter.notifyDataSetChanged();                                            
