@@ -12,3 +12,10 @@ dependencies {
     compile 'com.github.nr4bt:dialogplus:1.0.0-SNAPSHOT@aar'
 }
 </pre>
+
+###Usage
+In xml layout
+<pre>
+<com.github.nr4bt.simplelistview.SimpleListView 
+/>
+</pre>
