@@ -5,19 +5,42 @@ import android.database.DataSetObserver;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 
 /**
  * @author Orhan Obut
  */
 public class SimpleListView extends LinearLayout {
 
+    /**
+     * Invalid flag for the resources
+     */
     private static final int INVALID = -1;
-    private ListAdapter adapter;
+
+    /**
+     * Adapter that stores all row items
+     */
+    private BaseAdapter adapter;
+
+    /**
+     * Observer for the data changes
+     */
     private DataSetObserver dataSetObserver;
+
+    /**
+     * Layout inflater to create views
+     */
     private final LayoutInflater layoutInflater;
+
+    /**
+     * It is used to separate items if it is set
+     */
     private int dividerResId = INVALID;
+
+    /**
+     * Special item click listener in order to allow to user to take an action
+     */
     private OnItemClickListener itemClickListener;
 
     public SimpleListView(Context context) {
@@ -38,7 +61,7 @@ public class SimpleListView extends LinearLayout {
         this.itemClickListener = listener;
     }
 
-    public void setAdapter(ListAdapter adapter) {
+    public void setAdapter(BaseAdapter adapter) {
         if (this.adapter != null && this.dataSetObserver != null) {
             adapter.unregisterDataSetObserver(dataSetObserver);
         }
@@ -83,7 +106,7 @@ public class SimpleListView extends LinearLayout {
     }
 
     /**
-     * observe dataset changes, when the adapter notifyDataSetChanged method called, onChanged
+     * observe data set changes, when the adapter notifyDataSetChanged method called, onChanged
      * method will be called and view will be refreshed.
      */
     class AdapterDataSetObserver extends DataSetObserver {
