@@ -9,7 +9,7 @@ repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/"}
 }
 dependencies {
-    compile 'com.github.nr4bt:simplelistview:1.0.0-SNAPSHOT@aar'
+    compile 'com.orhanobut:simplelistview:1.0.0-SNAPSHOT@aar'
 }
 ```
 
