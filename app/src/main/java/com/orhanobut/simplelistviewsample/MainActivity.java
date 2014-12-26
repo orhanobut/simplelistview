@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
-import com.github.nr4bt.simplelistview.SimpleListView;
+import com.orhanobut.simplelistview.SimpleListView;
 
 
 public class MainActivity extends ActionBarActivity {

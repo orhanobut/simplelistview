@@ -17,7 +17,7 @@ dependencies {
 Either define in xml or dynamically.
 xml sample
 ```xml
-<com.github.nr4bt.simplelistview.SimpleListView
+<com.orhanobut.simplelistview.SimpleListView
     android:id="@+id/list"                     
     android:layout_width="match_parent"        
     android:layout_height="wrap_content"/>
