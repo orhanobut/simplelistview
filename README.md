@@ -23,22 +23,30 @@ xml sample
     android:layout_height="wrap_content"/>
 ```
 
-You can either set resource or view itself
+##### Set header
 ```java
 listView.setHeaderView(R.layout.header);
 ```
+or 
+```java
+listView.setHeaderView(view);
+```
 
-You can either set resource or view itself 
+##### Set footer
 ```java
 listView.setFooterView(R.layout.footer);
 ```
+or
+```java
+listView.setFooterView(view);
+```
 
-You can set only resource  
+##### Set divider
 ```java
 listView.setDividerView(R.layout.divider);
 ```
 
-You can set special listener for the listview
+##### Set item click Listener
 ```java
 listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() { 
     @Override                                                              
@@ -48,12 +56,29 @@ listView.setOnItemClickListener(new SimpleListView.OnItemClickListener() {
 });
 ```
 
-At last set adapter
+##### Set adapter
 ```java
 listView.setAdapter(adapter);
 ```
 
-Refresh the listview                                             
+##### Refresh the listview                                             
 ```java
 adapter.notifyDataSetChanged();
 ```
+
+###License
+<pre>
+Copyright 2014 Orhan Obut
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre>
