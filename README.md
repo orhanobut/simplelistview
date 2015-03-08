@@ -68,6 +68,12 @@ listView.setAdapter(adapter);
 adapter.notifyDataSetChanged();
 ```
 
+#### You might also like
+- [Hawk](https://github.com/orhanobut/hawk) Secure simple key-value storage
+- [Wasp](https://github.com/orhanobut/wasp) All-in-one network solution
+- [Bee](https://github.com/orhanobut/bee) QA/Debug tool
+- [DialogPlus](https://github.com/orhanobut/dialogplus) Easy,simple dialog solution
+
 ###License
 <pre>
 Copyright 2014 Orhan Obut
