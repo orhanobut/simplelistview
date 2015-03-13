@@ -6,8 +6,8 @@ simplelistview
 Android simple listview by using linearlayout. 
 
 #### The problem
-- You need to add a few items and you don't want scroll feature
-- You have a scrollview and you want to show a few items in the list
+- You need to add a few items and you don't want the scroll feature
+- You have a scrollview and you want to show a few items in the list as fully expanded
 
 ###Gradle
 ```groovy
