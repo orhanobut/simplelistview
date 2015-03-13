@@ -60,6 +60,9 @@ public class SimpleListView extends LinearLayout {
     }
 
     public void setDividerView(int resourceId) {
+        if (resourceId < 0) {
+            throw new IllegalStateException("Resource Id cannot be negative");
+        }
         dividerViewResourceId = resourceId;
     }
 
@@ -149,6 +152,6 @@ public class SimpleListView extends LinearLayout {
 
     public interface OnItemClickListener {
 
-        public void onItemClick(Object item, View view, int position);
+        void onItemClick(Object item, View view, int position);
     }
 }
