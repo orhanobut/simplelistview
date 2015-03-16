@@ -11,12 +11,7 @@ Android simple listview by using linearlayout.
 
 ###Gradle
 ```groovy
-repositories {
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/"}
-}
-dependencies {
-    compile 'com.orhanobut:simplelistview:1.1-SNAPSHOT@aar'
-}
+compile 'com.orhanobut:simplelistview:1.2@aar'
 ```
 
 ###Usage
