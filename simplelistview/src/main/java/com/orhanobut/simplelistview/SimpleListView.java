@@ -91,7 +91,7 @@ public class SimpleListView extends LinearLayout {
             throw new NullPointerException("Adapter may not be null");
         }
         if (this.adapter != null && this.dataSetObserver != null) {
-            adapter.unregisterDataSetObserver(dataSetObserver);
+            this.adapter.unregisterDataSetObserver(dataSetObserver);
         }
         this.adapter = adapter;
         this.dataSetObserver = new AdapterDataSetObserver();
