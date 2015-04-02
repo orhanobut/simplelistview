@@ -11,7 +11,7 @@ Android simple listview by using linearlayout.
 
 ###Gradle
 ```groovy
-compile 'com.orhanobut:simplelistview:1.2@aar'
+compile 'com.orhanobut:simplelistview:1.3@aar'
 ```
 
 ###Usage
@@ -68,6 +68,7 @@ adapter.notifyDataSetChanged();
 ```
 
 #### You might also like
+- [Logger](https://github.com/orhanobut/logger) Simple,pretty and advanced logger
 - [Hawk](https://github.com/orhanobut/hawk) Secure simple key-value storage
 - [Wasp](https://github.com/orhanobut/wasp) All-in-one network solution
 - [Bee](https://github.com/orhanobut/bee) QA/Debug tool
