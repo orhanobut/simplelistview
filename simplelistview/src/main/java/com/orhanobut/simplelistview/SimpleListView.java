@@ -111,14 +111,14 @@ public class SimpleListView extends LinearLayout {
         for (int i = 0; i < count; i++) {
             final View view = adapter.getView(i, null, this);
             final int position = i;
-            if (itemClickListener != null) {
-                view.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+            view.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (itemClickListener != null) {
                         itemClickListener.onItemClick(adapter.getItem(position), view, position);
                     }
-                });
-            }
+                }
+            });
             addView(view);
             if (dividerViewResourceId != INVALID && i != count - 1) {
                 addView(layoutInflater.inflate(dividerViewResourceId, this, false));
